@@ -64,7 +64,7 @@ const Home = () => {
     
 
        <div className='p-3'>
-            <h1 className=' text-xl font-medium text-center'>Who Should Join:</h1>
+            <h1 className=' text-xl font-medium text-center py-3'>Who Should Join:</h1>
             <p className='md:text-xl text-sm'>
             <span className='font-medium'>Influencers and other adspace hosts:</span> If you own a platform with advertising space (social media, website, billboard, newsletter etc.), AdMrt offers you a new way to earn money by hosting ads.<br></br>
             <span className='font-medium'>Advertisers:</span>  If you're looking to promote your brand through strategic ad placements, AdMrt connects you with ideal ad space hosts.<br></br>
