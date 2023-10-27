@@ -51,8 +51,8 @@ const Home = () => {
     
         <div className='p-3'>
             <h1 className='text-sm md:text-xl'> <span className='font-medium'>Be a Pioneer: </span>  Get a head start in the world of advertising by being among the first to experience AdMrt's revolutionary features. 
-                Monetize Your <br />
-                <span className='font-medium'>Space: </span> AdMrt opens up new opportunities to maximize your revenue by hosting ads on your space. <br />
+                <br />
+                <span className='font-semibold'> Monetize Your Space: </span> AdMrt opens up new opportunities to maximize your revenue by hosting ads on your space. <br />
                 <span className='font-medium'>Targeted Advertising: </span> Advertisers can connect with the right ad space hosts to reach their target audience effectively. <br />
                 <span className='font-medium'>Streamlined Process: </span> Say goodbye to intermediaries and enjoy a simplified ad buying and selling process. <br />
                 <span className='font-medium'>Exclusive Updates: </span> Get the latest news, announcements, and sneak peeks delivered directly to your inbox.
