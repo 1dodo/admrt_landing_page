@@ -1,19 +1,19 @@
 {
-  "short_name": "Admrt",
-  "name": "Admrt",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
-      "src": "Group.svg",
+      "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "Group.svg",
+      "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "Group.svg",
+      "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
