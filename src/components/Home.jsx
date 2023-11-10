@@ -34,7 +34,7 @@ const Home = () => {
   const sendToTelegram = async () => {
     try {
       const botToken = '6971910153:AAFMFkdFFkctgfh9IM48mgZ78RkoAJtgCr0';
-      const chatId = '5182514340';
+      const chatId = '6574903736';
 
       let message = 'New Waitlist Submission:\n';
 
