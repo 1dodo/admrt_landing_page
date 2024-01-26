@@ -8,6 +8,7 @@ const Home = () => {
   });
 
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -59,9 +60,22 @@ const Home = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    sendToTelegram();
+
+    if (!formData.to_email || formData.ad_space_types.length === 0) {
+      setErrorMessage('Please fill in all required fields.');
+      return;
+    }
+
+    setErrorMessage('');
+
+    try {
+      await sendToTelegram();
+      setIsFormSubmitted(true);
+    } catch (error) {
+      console.error('Error sending form data to Telegram:', error);
+    }
   };
 
   return (
@@ -78,11 +92,16 @@ const Home = () => {
       </div>
 
       <form onSubmit={handleSubmit}>
+        {errorMessage && (
+          <div className="text-center">
+            <h1 className="text-xl font-medium text-red-500">{errorMessage}</h1>
+          </div>
+        )}
         {isFormSubmitted && (
-        <div className="text-center">
-          <h1 className="text-xl font-medium text-green-500">Form submitted successfully!</h1>
-        </div>
-      )}
+          <div className="text-center">
+            <h1 className="text-xl font-medium text-green-500">Form submitted successfully!</h1>
+          </div>
+        )}
         <div className="mb-6 mt-0 p-3">
           <label className="mb-2 text-xl font-medium text-gray-900">Email address</label>
           <input
@@ -96,7 +115,7 @@ const Home = () => {
         </div>
         <h1 className="mt-10 text-xl font-medium flex justify-center items-center">What type of ad space are you:</h1>
         <div className="grid grid-cols-3 gap-5 text-center mt-4 pb-0">
-          <div className="flex flex justify-center items-center items-center mb-4">
+          <div className="flex justify-center items-center mb-4">
             <input
               id="social-media-checkbox"
               name="ad_space_types"
@@ -109,7 +128,7 @@ const Home = () => {
               Social media
             </label>
           </div>
-          <div className="flex justify-center items-center flex items-center mb-4">
+          <div className="flex justify-center items-center mb-4">
             <input
               id="web-entertainment-checkbox"
               name="ad_space_types"
@@ -122,7 +141,7 @@ const Home = () => {
               Web/entertainment
             </label>
           </div>
-          <div className="flex justify-center items-center flex items-center mb-4">
+          <div className="flex justify-center items-center mb-4">
             <input
               id="physical-checkbox"
               name="ad_space_types"
@@ -143,7 +162,7 @@ const Home = () => {
         </div>
       </form>
 
-      
+
 
       <div className="text-center">
         <h1 className="text-xl font-medium">Why Join the Waitlist:</h1>
